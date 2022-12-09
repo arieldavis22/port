@@ -1,0 +1,16 @@
+.home-container {
+  display: flex;
+  background-color: orange;
+  padding: 12px;
+}
+
+.home-left {
+  width: 50%;
+  margin: 2px;
+}
+
+.home-right {
+  width: 50%;
+  text-align: right;
+  margin: 2px;
+}
