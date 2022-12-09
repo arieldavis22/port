@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import "./App.css";
 
-import Home from "./components/Home";
+import Home from "./components//Home/Home";
 import Projects from "./components/Projects/Projects";
-import ContactForm from "./components/ContactForm";
-import SlideButton from "./components/SlideButton";
+import ContactForm from "./components/ContactForm/ContactForm";
+import SlideButton from "./components/SlideButton/SlideButton";
 
 /*
 0 = Home
