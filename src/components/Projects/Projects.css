@@ -1,0 +1,4 @@
+.main-projects__container {
+  display: flex;
+  flex-wrap: wrap;
+}
