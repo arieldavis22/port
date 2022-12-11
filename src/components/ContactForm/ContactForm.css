@@ -1,6 +1,5 @@
 .contact-form__form {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
 .contact-form__top {

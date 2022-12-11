@@ -3,7 +3,13 @@ import "./SlideButton.css";
 const SlideButton = ({ onChangeDisplay }) => {
   return (
     <div className="slide-button__container">
-      <span onClick={onChangeDisplay} className="slide-button__dot"></span>
+      <div onClick={onChangeDisplay} className="slide-button__bubble">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };
