@@ -11,11 +11,15 @@ const ProjectCard = ({ data }) => {
       setModalShow(true);
     }
   };
+
+  const projectStatusClass = `dot ${data.statusClass}`
+  const isWIP = data.name === "WIP" ? '' : 'wip-hover'
   return (
     <>
-      <div className="project-card__container" onClick={modalClickHandler}>
-        <img className="project-card__img" src={data.img} alt="Filler" />
-        <div className="project-card__overlay">{data.name}</div>
+      <div className={"project-card__container " + isWIP} onClick={modalClickHandler}>
+        <div>{data.name}</div>
+        <div className={projectStatusClass}></div>
+        <span></span>
       </div>
 
       <ProjectCardModel

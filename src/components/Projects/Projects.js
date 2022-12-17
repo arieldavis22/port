@@ -5,12 +5,15 @@ import gemTrader from "../../assets/gem-trader.png";
 
 import ProjectCard from "./ProjectCard";
 
-const Projects = () => {
+import * as React from 'react';
+
+const Projects = React.forwardRef((props, ref) => {
   const projectData = [
     {
       id: 0,
       name: "Luck of Dice",
       img: noImage,
+      statusClass: "down",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -18,6 +21,7 @@ const Projects = () => {
       id: 1,
       name: "Gem Trader",
       img: gemTrader,
+      statusClass: "active",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -25,6 +29,7 @@ const Projects = () => {
       id: 2,
       name: "Forecast Planner",
       img: noImage,
+      statusClass: "wip",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -32,6 +37,7 @@ const Projects = () => {
       id: 3,
       name: "Dev Learning",
       img: noImage,
+      statusClass: "wip",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -39,6 +45,7 @@ const Projects = () => {
       id: 4,
       name: "WIP",
       img: noImage,
+      statusClass: "wip",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -46,17 +53,23 @@ const Projects = () => {
       id: 5,
       name: "WIP",
       img: noImage,
+      statusClass: "wip",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
   return (
-    <div className="main-projects__container">
-      {projectData.map((data) => (
-        <ProjectCard key={data.id} data={data} />
-      ))}
+    <div ref={ref} {...props} className="container">
+      <div>
+      <h2>Projects</h2>
+      <div className="main-projects__container">
+      {projectData.map(project => 
+        <ProjectCard key={project.id} data={project} />
+      )}
+      </div>
+      </div>
     </div>
   );
-};
+});
 
 export default Projects;

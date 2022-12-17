@@ -30,6 +30,7 @@ const ContactForm = () => {
   return (
     <div className="container">
       <div className="contact-form__form">
+      <h2>Contact</h2>
         <Form ref={form} onSubmit={sendEmailHandler}>
           <Form.Group className="mb-3">
             <Form.Label>Full Name</Form.Label>

@@ -5,8 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white !important;
   background-color: black !important;
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+  height: 100vh;
+  /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%); */
+}
+
+body #root {
+  height: 100vh;
 }
 
 code {
@@ -16,6 +22,20 @@ code {
 
 .container {
   display: flex;
-  background-color: orange;
+  background-color: transparent;
   padding: 12px;
+  border-width: 0px 12px 0px 12px;
+  border-style: double;
+  border-color: gold;
+  border-radius: 30px;
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.modal-content {
+  color: black !important;
 }
