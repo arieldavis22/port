@@ -1,13 +1,18 @@
 import "./Projects.css";
 
+import { useSelector } from "react-redux";
+
 import noImage from "../../assets/no-image.jpg";
 import gemTrader from "../../assets/gem-trader.png";
 
 import ProjectCard from "./ProjectCard";
 
-import * as React from 'react';
+import * as React from "react";
 
-const Projects = React.forwardRef((props, ref) => {
+import Slide from "@mui/material/Slide";
+
+const Projects = () => {
+  const slide = useSelector((state) => state.direction);
   const projectData = [
     {
       id: 0,
@@ -59,17 +64,19 @@ const Projects = React.forwardRef((props, ref) => {
     },
   ];
   return (
-    <div ref={ref} {...props} className="container">
-      <div>
-      <h2>Projects</h2>
-      <div className="main-projects__container">
-      {projectData.map(project => 
-        <ProjectCard key={project.id} data={project} />
-      )}
+    <Slide direction={slide} in={true} mountOnEnter unmountOnExit>
+      <div className="container">
+        <div>
+          <h2>Projects</h2>
+          <div className="main-projects__container">
+            {projectData.map((project) => (
+              <ProjectCard key={project.id} data={project} />
+            ))}
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
+    </Slide>
   );
-});
+};
 
 export default Projects;
