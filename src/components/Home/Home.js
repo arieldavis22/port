@@ -9,8 +9,13 @@ import Slide from "@mui/material/Slide";
 
 const Home = () => {
   const slide = useSelector((state) => state.direction);
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  const text = `
+  Hello and welcome to my portfolio / playground. I am a full stack web developer with a passion for expansive learning.  
+  I have experience in Ruby on Rails, JavaScript, React, Typescript, Java, 
+  and Python tied to robotics and programming via work with the Technology Student Association (TSA). 
+  I'm deeply invested in problem solving, user experience and possess strong skills in team-building, deadline management, 
+  and communications that now fluently transfer into work as a developer. This website is made with React and Material UI.
+  `;
   const lnClickEventHandler = () => {
     window.open("https://www.linkedin.com/in/arieladavis/", "__blank");
   };
