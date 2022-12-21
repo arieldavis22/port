@@ -11,6 +11,7 @@ import Home from "./components//Home/Home";
 import Projects from "./components/Projects/Projects";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SlideButton from "./components/SlideButton/SlideButton";
+import BubbleFooter from "./components/BubbleFooter/BubbleFooter";
 
 /*
 0 = Home
@@ -55,15 +56,20 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <div className="app-navigate">
-        {showLeft && <SlideButton onChangeDisplay={decreaseDisplayHandler} />}
+    <>
+      <div className="App">
+        <div className="app-navigate">
+          {showLeft && <SlideButton onChangeDisplay={decreaseDisplayHandler} />}
+        </div>
+        <div className="app-main">{main}</div>
+        <div className="app-navigate">
+          {showRight && (
+            <SlideButton onChangeDisplay={increaseDisplayHandler} />
+          )}
+        </div>
       </div>
-      <div className="app-main">{main}</div>
-      <div className="app-navigate">
-        {showRight && <SlideButton onChangeDisplay={increaseDisplayHandler} />}
-      </div>
-    </div>
+      <BubbleFooter />
+    </>
   );
 };
 

@@ -1,0 +1,5 @@
+.bubble-footer__container {
+  position: fixed;
+  bottom: 100px;
+  width: 100%;
+}
