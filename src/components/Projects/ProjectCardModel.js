@@ -16,6 +16,14 @@ const ProjectCardModel = (props) => {
       </Modal.Header>
       <Modal.Body>
         <p>{props.data.description}</p>
+        {props.data.links.map((link) => (
+          <>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.name}
+            </a>
+            <br />
+          </>
+        ))}
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
