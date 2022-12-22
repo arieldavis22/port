@@ -1,0 +1,39 @@
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+const ContactFormModel = (props) => {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      {/* <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          {props.data.name}
+        </Modal.Title>
+      </Modal.Header> */}
+      <Modal.Body>
+        {props.data.status === 200 ? (
+          <p>Email has been sent!</p>
+        ) : (
+          <p>Error sending email: {props.data.status}</p>
+        )}
+        {/* {props.data.links.map((link, index) => (
+          <div key={index}>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.name}
+            </a>
+            <br />
+          </div>
+        ))} */}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+};
+
+export default ContactFormModel;
